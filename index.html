@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md Rifat | Web Developer & Freelancer</title>
+    <meta
+      name="description"
+      content="Md Rifat is a web developer and freelancer from Rangpur, Bangladesh. Explore my projects, skills, and professional experience."
+    />
+    <meta
+      name="keywords"
+      content="mdrifatdev, Md Rifat, Web Developer Bangladesh, Freelancer Bangladesh, Textile Engineer, Portfolio, Projects, Bangladesh developer"
+    />
+    <meta name="theme-color" content="#f0a500" />
+    <style>
+      :root {
+        --bg-dark: #0f172a;
+        --bg-soft: #111827;
+        --card: rgba(17, 24, 39, 0.9);
+        --text: #e5e7eb;
+        --muted: #cbd5e1;
+        --gold: #f0a500;
+        --gold-soft: #ffd166;
+        --white: #ffffff;
+        --border: rgba(255, 255, 255, 0.12);
+        --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: radial-gradient(circle at top, #1f2937 0%, #0f172a 45%, #020817 100%);
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      a {
+        color: var(--gold-soft);
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 70px;
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        color: var(--gold-soft);
+        font-size: 1.1rem;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        opacity: 0.9;
+        font-weight: 600;
+      }
+
+      .nav-links a:hover {
+        color: var(--white);
+      }
+
+      .hero {
+        padding: 96px 0 56px;
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(240, 165, 0, 0.12);
+        border: 1px solid rgba(240, 165, 0, 0.4);
+        color: var(--gold-soft);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 18px 0 14px;
+        font-size: clamp(2.6rem, 5vw, 5rem);
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+      }
+
+      .highlight {
+        color: var(--gold-soft);
+      }
+
+      .lead {
+        max-width: 620px;
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      .btn {
+        padding: 14px 22px;
+        border-radius: 12px;
+        font-weight: 700;
+        border: 1px solid transparent;
+        transition: 0.25s ease all;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--gold) 0%, #d18806 100%);
+        color: var(--white);
+        box-shadow: 0 12px 30px rgba(240, 165, 0, 0.35);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.02);
+        color: var(--white);
+      }
+
+      .btn-outline:hover {
+        border-color: rgba(255, 255, 255, 0.35);
+      }
+
+      .hero-card {
+        background: linear-gradient(180deg, rgba(17, 24, 39, 0.9), rgba(15, 23, 42, 0.9));
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .profile-box {
+        display: grid;
+        place-items: center;
+        text-align: center;
+      }
+
+      .avatar {
+        width: 180px;
+        height: 180px;
+        border-radius: 28px;
+        display: grid;
+        place-items: center;
+        font-size: 4rem;
+        background: linear-gradient(135deg, #f0a500, #f59e0b, #d97706);
+        color: #1f2937;
+        font-weight: 900;
+        margin-bottom: 14px;
+        box-shadow: 0 14px 30px rgba(240, 165, 0, 0.35);
+      }
+
+      .profile-name {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin: 4px 0;
+      }
+
+      .profile-role {
+        color: var(--gold-soft);
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+
+      .mini-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .stat {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 12px 10px;
+        text-align: center;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.3rem;
+        color: var(--gold-soft);
+      }
+
+      section {
+        padding: 40px 0 20px;
+      }
+
+      .section-head {
+        margin-bottom: 28px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin: 0 0 10px;
+        letter-spacing: -0.04em;
+      }
+
+      .section-head p {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 24px;
+      }
+
+      .panel {
+        background: rgba(17, 24, 39, 0.78);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .about-grid p {
+        color: var(--muted);
+        margin: 0 0 16px;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .chip {
+        border: 1px solid rgba(240, 165, 0, 0.4);
+        background: rgba(240, 165, 0, 0.1);
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 0.88rem;
+        color: var(--gold-soft);
+        font-weight: 700;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .project-card {
+        background: rgba(17, 24, 39, 0.8);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.25s ease, border-color 0.25s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(240, 165, 0, 0.5);
+      }
+
+      .project-top {
+        padding: 22px 20px 16px;
+        background: linear-gradient(135deg, rgba(240, 165, 0, 0.18), rgba(17, 24, 39, 0.14));
+        border-bottom: 1px solid var(--border);
+      }
+
+      .project-top h3 {
+        margin: 0;
+        font-size: 1.45rem;
+      }
+
+      .project-body {
+        padding: 20px;
+      }
+
+      .project-body p {
+        margin-top: 0;
+        color: var(--muted);
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0;
+      }
+
+      .tag {
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 0.76rem;
+        font-weight: 700;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 24px;
+      }
+
+      .contact-card {
+        background: rgba(17, 24, 39, 0.8);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .contact-item {
+        padding: 14px 16px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .contact-item strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .social-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .social-link {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 700;
+      }
+
+      .footer {
+        padding: 28px 0 42px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media (max-width: 900px) {
+        .hero-inner,
+        .about-grid,
+        .projects-grid,
+        .contact-wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .nav {
+          flex-direction: column;
+          padding: 18px 0;
+          gap: 12px;
+        }
+
+        .nav-links {
+          justify-content: center;
+        }
+
+        .hero {
+          padding-top: 68px;
+        }
+
+        .mini-stats {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand">mdrifatdev</div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div>
+            <span class="badge">Available for freelance work</span>
+            <h1>Hello, I'm <span class="highlight">Md Rifat</span></h1>
+            <p class="lead">
+              Web Developer & Freelancer from Rangpur, Bangladesh. I build modern
+              and responsive websites, digital products, and practical web apps that
+              help businesses and people work smarter.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#projects">View Projects</a>
+              <a class="btn btn-outline" href="mailto:mdrifatdevs@gmail.com">Hire Me</a>
+            </div>
+          </div>
+
+          <div class="hero-card profile-box">
+            <div class="avatar">MR</div>
+            <div class="profile-name">Md Rifat</div>
+            <div class="profile-role">Web Developer & Freelancer</div>
+            <div class="profile-role">Textile Engineer by Degree</div>
+
+            <div class="mini-stats">
+              <div class="stat">
+                <strong>5+</strong>
+                Projects
+              </div>
+              <div class="stat">
+                <strong>HTML</strong>
+                Frontend
+              </div>
+              <div class="stat">
+                <strong>JS</strong>
+                Focus
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="section-head">
+            <h2>About Me</h2>
+            <p>Passionate builder of clean, functional, and modern digital experiences.</p>
+          </div>
+
+          <div class="about-grid">
+            <div class="panel">
+              <p>
+                I’m <strong>Md Rifat</strong>, known online as <strong>mdrifatdev</strong>.
+                I am a web developer and freelancer from <strong>Rangpur, Bangladesh</strong>,
+                with a strong interest in building useful interfaces, tools, and web applications.
+              </p>
+              <p>
+                My background in <strong>Textile Engineering</strong> gives me a practical,
+                problem-solving mindset. I enjoy turning ideas into user-friendly products,
+                especially in frontend development and small business web solutions.
+              </p>
+              <p>
+                I focus on clean design, responsive layouts, and performance-driven user
+                experiences. Whether it's a calculator, inventory tool, or portfolio website,
+                I aim to create value for real users.
+              </p>
+            </div>
+
+            <div class="panel">
+              <h3>Tools & Skills</h3>
+              <div class="skills" style="margin-top: 16px;">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">React</span>
+                <span class="chip">Tailwind</span>
+                <span class="chip">Bootstrap</span>
+                <span class="chip">Git</span>
+                <span class="chip">GitHub</span>
+                <span class="chip">Vercel</span>
+                <span class="chip">Figma</span>
+                <span class="chip">Responsive Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="container">
+          <div class="section-head">
+            <h2>Featured Projects</h2>
+            <p>Some of the projects I’ve built and published.</p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-top">
+                <h3>TexCalc</h3>
+              </div>
+              <div class="project-body">
+                <p>
+                  A textile calculation web app designed to simplify engineering-based calculations
+                  for users in the textile industry.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">HTML</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/mdrifatdev/TexCalc" target="_blank" rel="noreferrer">GitHub</a>
+                  <a href="https://tex-calc.vercel.app" target="_blank" rel="noreferrer">Live Demo</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <h3>Knit Simulator</h3>
+              </div>
+              <div class="project-body">
+                <p>
+                  An interactive knit simulation project focused on visualizing textile patterns
+                  and knitting-related concepts in a clean interface.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JS</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/mdrifatdev/Knit-Simulator" target="_blank" rel="noreferrer">GitHub</a>
+                  <a href="https://knit-simulator.vercel.app" target="_blank" rel="noreferrer">Live Demo</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <h3>Inventory-Managment</h3>
+              </div>
+              <div class="project-body">
+                <p>
+                  A practical inventory management project built to help manage stock and related
+                  business data with a modern workflow.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">UI</span>
+                  <span class="tag">Web App</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/mdrifatdev/Inventory-Managment" target="_blank" rel="noreferrer">GitHub</a>
+                  <a href="https://inventory-managment-sooty.vercel.app" target="_blank" rel="noreferrer">Live Demo</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <h3>Product Calculator</h3>
+              </div>
+              <div class="project-body">
+                <p>
+                  A simple calculator-oriented tool used for quick product-related computations and
+                  business calculation tasks.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/mdrifatdev/product-calculator" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <h3>Stockly</h3>
+              </div>
+              <div class="project-body">
+                <p>
+                  A stock and inventory-focused project for managing products and operational data in
+                  a structured way.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Business Tool</span>
+                  <span class="tag">Responsive</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/mdrifatdev/Stockly" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <h3>Portfolio Website</h3>
+              </div>
+              <div class="project-body">
+                <p>
+                  The personal portfolio website for showcasing my work, experience, and freelance
+                  availability for potential clients and partners.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Portfolio</span>
+                  <span class="tag">GitHub Pages</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/mdrifatdev/mdrifatdev.github.io" target="_blank" rel="noreferrer">GitHub</a>
+                  <a href="https://mdrifatdev.github.io" target="_blank" rel="noreferrer">Website</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container contact-wrap">
+          <div class="contact-card">
+            <h2 style="margin-top: 0;">Let's Work Together</h2>
+            <p style="color: var(--muted);">
+              I’m open to freelance web development projects, landing pages, business websites,
+              and functional web tools.
+            </p>
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Email</strong>
+                <a href="mailto:mdrifatdevs@gmail.com">mdrifatdevs@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <strong>Location</strong>
+                Rangpur, Bangladesh
+              </div>
+              <div class="contact-item">
+                <strong>Focus</strong>
+                Frontend Development, Portfolio Sites, Business Websites
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h2 style="margin-top: 0;">Connect With Me</h2>
+            <p style="color: var(--muted);">
+              Find me on social platforms and keep in touch for collaborations and opportunities.
+            </p>
+            <div class="social-row">
+              <a class="social-link" href="https://github.com/mdrifatdev" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="social-link" href="https://linkedin.com/in/mdrifatdev" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="social-link" href="https://instagram.com/mdrifatdev" target="_blank" rel="noreferrer">Instagram</a>
+              <a class="social-link" href="https://x.com/mdrifatdev" target="_blank" rel="noreferrer">X / Twitter</a>
+              <a class="social-link" href="https://dev.to/mdrifatdev" target="_blank" rel="noreferrer">Dev.to</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        © 2026 <strong>Md Rifat</strong> | Web Developer & Freelancer | Rangpur, Bangladesh 🇧🇩
+      </div>
+    </footer>
+  </body>
+</html>
